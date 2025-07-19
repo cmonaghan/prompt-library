@@ -2,9 +2,11 @@
 
 These are the prompts I currently use when developing features in partnership with an AI coding tool, usually Cursor or Claude Code.
 
+
 ## Prompt strategy in 3 steps
 
 There are 3 phases to my approach:
+
 
 ### 1. Develop a Product Requirements Document
 
@@ -13,6 +15,7 @@ Example:
 >We're building a product described here: @product-context.mdc. We'd like to build a new feature that does... {fill this in with a few sentences describing your feature}. Our first step is to create a Product Requirements Document. Please follow these instructions to develop a document for our new feature: @create-prd.mdc.
 
 Once this generates a PRD, I will review this carefully and manually edit the document. Going slow at this review step is one of the highest leverage moments in the development process, and time spent here will save you time later, so don't rush it! Once I've made all my edits, I make sure the agent knows I have made changes from its last state so it can update its context.
+
 
 ### 2. Develop a task list
 
@@ -30,6 +33,8 @@ Note that if we're still in the same context window, there's no need to attach t
 Example:
 
 >Great! We now have a well-defined list of tasks. Please follow the instructions in @process-task-list.mdc and begin on task 1.1.
+
+After this step I review the diff and test the work. If it checks out, then I commit the change and proceed with the next task. Otherwise I provide guidance about what isn't quite right. Rinse and repeat.
 
 
 ## What to do when we exhaust our context window or when the agent goes off the rails
